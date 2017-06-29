@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hastaelinfinito</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	body,html{
+		width:100%;
+		height:100%;
+	}
+	.contenidorgran{
+		width:600px;
+		height:600px;
+		position:relative;
+		margin:20% auto 0 auto;
+		background-color:green;
+	}
+	.coet{
+		background:url("http://padawan.jediupc.com/moodle/pluginfile.php/443/mod_assign/intro/rocket.png");
+		width:50px;
+		height:50px;
+		position:absolute;
+		-webkit-animation-name: coetanimacio; /* Chrome, Safari, Opera */
+    	-webkit-animation-duration: 3s; /* Chrome, Safari, Opera */
+    	-webkit-animation-iteration-count: infinite; /* Chrome, Safari, Opera */
+    	animation-name: coetanimacio;
+    	animation-duration: 3s;
+    	animation-iteration-count: infinite;
+	}
+	#terra{
+		background:url("http://padawan.jediupc.com/moodle/pluginfile.php/443/mod_assign/intro/planet.png");
+		width:64px;
+		height:64px;
+		position:absolute;
+		margin-top:268px;
+		margin-left:268px;
+	}
+	@-webkit-keyframes coetanimacio {
+    0%   {transform:rotate(90deg); margin-left:275px;}
+    25%  {transform:rotate(180deg);margin-left:550px; margin-top:275px;}
+    50%  {transform:rotate(270deg);margin-left:275px; margin-top:550px;}
+    75%  {transform:rotate(360deg);margin-top:275px;margin-left:0px;}
+    100% {transform:rotate(450deg); margin-left:275px;}
+	}
+	@keyframes coetanimacio{ /* Safari and Chrome */
+    0%   {transform:rotate(90deg); margin-left:275px;}
+    25%  {transform:rotate(180deg);margin-left:550px; margin-top:275px;}
+    50%  {transform:rotate(270deg);margin-left:275px; margin-top:550px;}
+    75%  {transform:rotate(360deg);margin-top:275px;margin-left:0px;}
+    100% {transform:rotate(450deg); margin-left:275px;}
+	}
+	@-webkit-keyframes coetanimacioterrascared {
+    0%   {transform:rotate(90deg); margin-left:325px; margin-top:200px;}
+    25%  {transform:rotate(180deg);margin-left:200px; margin-top:125px;}
+    50%  {transform:rotate(270deg);margin-left:125px; margin-top:200px;}
+    75%  {transform:rotate(360deg);margin-top:125px;margin-left:0px;}
+    100% {transform:rotate(450deg); margin-left:200px;}
+	}
+	@keyframes coetanimacioterrascared{ /* Safari and Chrome */
+    0%   {transform:rotate(90deg); margin-left:325px;}
+    25%  {transform:rotate(180deg);margin-left:200px; margin-top:125px;}
+    50%  {transform:rotate(270deg);margin-left:125px; margin-top:200px;}
+    75%  {transform:rotate(360deg);margin-top:125px;margin-left:0px;}
+    100% {transform:rotate(450deg); margin-left:200px;}
+	}
+	#terra:hover+.coet{
+		-webkit-animation-name: coetanimacioterrascared; /* Chrome, Safari, Opera */
+    	-webkit-animation-duration: 3s; /* Chrome, Safari, Opera */
+    	-webkit-animation-iteration-count: infinite; /* Chrome, Safari, Opera */
+    	animation-name: coetanimacioterrascared;
+    	animation-duration: 3s;
+    	animation-iteration-count: infinite;
+	}
+	</style>
+	</head>
+	<body>
+		<div class="contenidorgran">
+			<div id="terra"></div>
+			<div class="coet"></div>
+		</div>
+	</body>
+</html>

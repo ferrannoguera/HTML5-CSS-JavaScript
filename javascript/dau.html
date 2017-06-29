@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Dau</title>
+		<meta charset="utf-8">
+		<style type="text/css">
+                body,html{
+                        width:100%;
+                        height:100%;
+                }
+                #imgmove{
+				position:relative;
+				top:5%;
+				left:5%;
+		}
+        </style>
+        <script type="text/javascript">
+        var animate;
+        	function imatgerandom(){
+				var a = Math.floor(Math.random()*5);
+				if (a == 0) document.getElementById("imgmove").src = "dado1.png";
+				else if (a == 1) document.getElementById("imgmove").src = "dado2.png";
+				else if (a == 2) document.getElementById("imgmove").src = "dado3.png";
+				else if (a == 3) document.getElementById("imgmove").src = "dado4.png";
+				else if (a == 4) document.getElementById("imgmove").src = "dado5.png";
+				else if (a == 5) document.getElementById("imgmove").src = "dado6.png";
+				animate = setTimeout(imatgerandom,150);
+			}
+			window.onload=imatgerandom;
+        </script>
+    </head>
+    <body>
+    	<img id="imgmove" onclick="stop();">
+    </body>
+</html>

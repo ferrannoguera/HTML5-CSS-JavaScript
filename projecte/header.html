@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <meta charset="utf-8">
+                <style type="text/css">
+                        #container{
+                        	position:relative;
+                        	width:100%;
+                        	height:50px;
+                        	background-color:#033E06;
+                        	margin:0 auto 0 auto;
+
+                        }
+                        * {
+                                margin:0;
+                                padding: 0;
+                        }
+                        body,html {
+                                width: 100%;
+                                height: 100%;
+                        }
+                        #container ul {
+                        	  	margin-left: auto;
+  							    margin-right: auto;
+  								margin-top: 0px;
+  								margin-bottom: 0px;
+                                position: absolute;
+                                height:100%;
+                                width:100%;
+                                display:table;
+                        }
+                        ul li {
+                        		display:inline;
+                                padding-top: 15px;
+                                padding-bottom: 15px;
+                                color:white;
+ 
+                        /*}
+                        a {
+                                color: white;
+                                text-decoration: none;
+                        }
+                        ul li ul  {
+                                display:none;
+                                position: relative;
+                        }
+                        ul li ul li {
+                                padding-top: -15px;
+                                padding-bottom: -15px;
+                        }
+                        ul li ul li a {
+                                font-size: 13px;
+                        }
+                        li:hover > ul {
+                                display:block;
+                                animation: abrir 0.5s;
+                                -webkit- animation: abrir 0.5s;
+                        }
+                        li:hover > ul > li {
+                                margin-left: 20px;
+ 
+                        }
+                        li:hover > a {
+                                color: #BBB;
+                        }
+                        li:hover {
+                                color: #BBB;
+                        }*/
+                        @-webkit-keyframes abrir {
+                                0% {opacity: 0;}
+                        100% {opacity: 1;}
+                        }
+                        @keyframes abrir {
+                                0% {opacity: 0;}
+                        100% {opacity: 1;}
+                        }
+ 
+                </style>
+        </head>
+        <body>
+                <header>
+                        <nav>
+                        	<div id="container">
+                                <ul>
+                                        <li>
+                                                <a href="galeria.php">
+                                                <input type="button" value="Galeria">
+                                            </a>
+                                        </li>
+                                        <li>DOCUMENTS
+                                                <ul>
+                                                        <li >
+                                                                <a href="noticia.php">NOTICIA</a>
+                                                        </li>
+                                                        <li >
+                                                                <a href="curriculum.php">CURRICULUM</a>
+                                                        </li>
+                                                </ul>
+                                        </li>
+                                        <li>OCI
+                                                <ul>
+                                                        <li >
+                                                                <a href="androitor.php">ANDROITOR3000</a>
+                                                        </li>
+                                                </ul>
+                                        </li>
+ 
+                                </ul>
+                            </div>
+                        </nav>
+                </header>
+                <footer>
+ 
+                </footer>
+        </body>
+</html>

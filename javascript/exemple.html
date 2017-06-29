@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<style type="text/css">
+		.caja{
+			width:50px;
+			height:50px;
+			background-color:red;
+		}
+		</style>
+		<script type="text/javascript">
+			var caja;
+			var animate;
+			var movimientosexy;
+			var right = 1;
+			function init(){
+				caja = document.getElementsByClassName("caja")[0];
+				caja.style.position = "relative";
+				caja.style.left = "0px";
+				movimientosexy = 20;
+			}
+
+			function move(){
+				if(parseInt(caja.style.left) < document.body.clientWidth){
+					caja.style.left= parseInt(caja.style.left) + movimientosexy +"px";
+				}
+				else{
+					caja.style.right= parseInt(caja.style.right) - movimientosexy +"px";
+					
+				}
+				animate = setTimeout(move,20);
+			}
+
+
+			function pause() {
+				clearTimeout(animate);
+			}
+
+			window.onload = init;
+			</script>
+		</head>
+		<body>
+			<div class="caja"></div>
+			<br>
+			<button onclick="move();">Move!</button>
+		</body>
+		</html>

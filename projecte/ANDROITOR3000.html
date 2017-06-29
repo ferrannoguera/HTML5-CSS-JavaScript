@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+        <head>
+            <title>Androitor-3000</title>
+            <meta charset="utf-8">
+            <style type="text/css">
+            * {
+                    margin: 0;
+                    padding: 0;
+            }
+            body,html{
+                    width:100%;
+                    height:100%;
+            }
+            div{
+            	font-family:"Roboto Slab", Georgia,Serif;
+            }
+            .generalimg{
+                    position:absolute;
+            }
+            #poma{
+                    opacity:0;
+            }
+            #android{
+                    top:5%;
+                    left:5%;
+            }
+            #windows{
+                    display:none;
+            }
+            .vides{
+            	position:relative;
+            	float:left;
+            }
+            #v1{}
+           	#v2{}
+           	#v3{}
+           	#puntuacio{
+           		position:relative;
+           		left:72.5%;
+           		float:left;
+           	}
+           	#p{
+           		position:relative;
+           		left:74.5%;
+           	}
+            </style>
+            <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+            <script type="text/javascript">
+                    var velocitat = 3000;
+                    var score = 0;
+                    var a;
+                    var windows = 0;
+                    var vides = 2;
+                    var primercop = 1;
+                    function startgame(){
+                    		if (primercop){
+                    			alert("Salva las manzanas! Haz click en el logo de Windows para un bonus de velocidad y tiempo");
+                    			primercop = !primercop;
+                    		}
+                            $("#poma").css({"opacity":"1"});
+                            changerandomapple();
+                            goforitrobot();
+                            $( "#poma" ).click( function() {
+                                    generaWindows();
+                                    score += 20;
+                                    document.getElementById("p").innerHTML="";
+                                    document.getElementById("p").innerHTML=score;
+                                    changerandomapple();
+                                    goforitrobot();
+                            });
+                    }
+
+                    function generaWindows() {
+                    		if (!windows) {
+		                    	var possibilitat = Math.random();
+		                    	if (possibilitat < 0.125) {
+		                        	$("body").append('<img class="generalimg" id="windows" src="w1.png" alt="windows">');
+		                    		changerandomwindows(); 
+		                            inandout();
+		                            $("#windows").click(tocaWindows);
+		                            windows = !windows;
+		                            setTimeout(function() {
+		                            	$("#windows").remove();
+		                            	windows = !windows;
+		                            }, 5000)
+		                        }
+	                        }
+                	}
+
+                	function tocaWindows() {
+                		console.log("toco el windows");
+                		score += 500; 
+                		document.getElementById("p").innerHTML="";
+                        document.getElementById("p").innerHTML=score;
+                        $("#windows").remove();
+                        var lefto = $("#poma").css("left");
+                        var topo = $("#poma").css("top");
+                        $("#android").stop().animate({
+                            left: lefto,
+                            top: topo
+                        	}, 3000);
+                	}
+
+                    //comprova si s'ha acabat i dona l'score
+                    function sacabo() {
+                            if (!vides){$("#v1").remove(); alert("Fin del juego tu puntuación es: "+score);}
+                            else {
+                            	velocitat = 3000;
+                            	--vides;
+                            	startgame();
+                            	if (vides == 1){
+                            		$("#v3").remove();
+                            	}
+                            	else if (vides == 0){
+                            		$("#v2").remove();
+                            	}
+                    		}
+                    }
+
+
+                    function changerandomwindows() {
+                            lefto = Math.random()*(document.body.clientWidth-document.getElementsByClassName("generalimg")[2].width);
+                            topo =  Math.random()*(document.body.clientHeight-document.getElementsByClassName("generalimg")[2].height);
+                            document.getElementsByClassName("generalimg")[2].style.left = lefto+"px";
+                            document.getElementsByClassName("generalimg")[2].style.top = topo + "px";
+                    }
+                    //Posiciona l'imatge d'apple en un lloc random al fer-hi clic && tria aleatoriament entre les seves 3 imatges
+                    //Disponibles.
+                    function changerandomapple(){
+                            lefto = Math.random()*(document.body.clientWidth-document.getElementsByClassName("generalimg")[0].width);
+                            topo =  Math.random()*(document.body.clientHeight-document.getElementsByClassName("generalimg")[0].height);
+                            document.getElementsByClassName("generalimg")[0].style.left = lefto+"px";
+                            document.getElementsByClassName("generalimg")[0].style.top = topo + "px";
+                            var a = Math.floor(Math.random()*3);
+                            if (a == 0) document.getElementsByClassName("generalimg")[0].src = "a1.png";
+                            else if (a == 1) document.getElementsByClassName("generalimg")[0].src = "a2.png";
+                            else document.getElementsByClassName("generalimg")[0].src = "a3.png";
+                    }
+                   
+                    //fa parpadejar el logo de windows
+                    function inandout(){ $("#windows").fadeIn(500).delay(250).fadeOut(500, inandout) }
+
+                    //el robot va a per el logo d'apple
+                    function goforitrobot(){
+                            velocitat -= 50;
+                            var lefto = $("#poma").css("left");
+                            var topo = $("#poma").css("top");
+                            var righto = $("#poma").css("right");
+                            var bottomo = $("#poma").css("bottom");
+                            $("#android").stop().animate({
+                                    left: lefto,
+                                    top: topo,
+                                    bottom: bottomo,
+                                    right: righto
+                                    },velocitat, function() {
+                                    	sacabo();
+                                    });
+                    }
+
+                    window.onload = startgame;
+            </script>
+        </head>            
+        <body>            
+                <img class="generalimg" id="poma" src="a1.png" alt="apple">
+                <img class="generalimg" id="android" src="robot.png" alt="android">
+                <img class="vides" id="v1" src="vides.gif" alt="noaparese">
+                <img class="vides" id="v2" src="vides.gif" alt="noaparese">
+                <img class="vides" id="v3" src="vides.gif" alt="noaparese">
+                <div id="puntuacio"><b>Puntuació:</b></div> <div id="p">0</div>
+        </body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Dominó</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		.div_float{
+			width: 200px;
+			height: 200px;
+			position: relative;
+			float:left;
+			z-index:1;
+			background-color:black;
+		}
+		.forats{
+			width:50px;
+			height:50px;
+			border-radius:50px;
+			position:absolute;
+			z-index:2;
+			background-color:white;
+		}
+		#dau1{
+			top:300px;
+		}
+		#dau3{
+			top:100px;
+			right:200px;
+		}
+		#dau4{
+			right:200px;
+		}
+		#dau5{
+			right:400px;
+			top:200px;
+		}
+		#foratcentral{
+			background-color:white;
+			top:75px;
+			left:75px;
+		}
+		#forat4tr{
+			top:25px;
+			left:25px;
+		}
+		#forat4tl{
+			top:25px;
+			left:125px;
+		}
+		#forat4b{
+			top:100px;
+		}
+		#forat3tl{
+			bottom:50px;
+			left:50px;
+		}
+		#forat3br{
+			top:50px;
+			right:50px;
+		}
+		#foratrevest{
+			bottom:50px;
+			right:50px;
+		}
+		#foratrevesb{
+			top:50px;
+			left:50px;
+		}
+	</style>
+	</head>
+	<body>
+		<div class="div_float" id="dau1">
+			<div class="forats" id="foratcentral"></div>
+		</div>
+		
+		<div class="div_float" id="dau3">
+			<div class="forats" id="forat4tr">
+				<div class="forats" id="forat4b"></div>
+			</div>
+			<div class="forats" id="forat4tl">
+				<div class="forats" id="forat4b"></div>
+			</div>
+		</div>
+		
+		<div class="div_float" id="dau3">
+			<div class="forats" id="forat4tr">
+				<div class="forats" id="forat4b"></div>
+			</div>
+			<div class="forats" id="forat4tl">
+				<div class="forats" id="forat4b"></div>
+			</div>
+		</div>	
+			
+		<div class="div_float" id="dau3">
+			<div class="forats" id="foratcentral">
+				<div class="forats" id="foratrevesb"></div>
+				<div class="forats" id="foratrevest"></div>
+			</div>
+		</div>				
+		
+		<div class="div_float" id="dau4">
+			<div class="forats" id="foratcentral">
+				<div class="forats" id="forat3tl"></div>
+				<div class="forats" id="forat3br"></div>
+			</div>
+		</div>
+		
+		<div class="div_float" id="dau5">
+			<div class="forats" id="foratcentral">
+				<div class="forats" id="forat3tl"></div>
+				<div class="forats" id="forat3br"></div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Formulari</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<h1>Formulari d'accés buscaminas online</h1>
+		<form name="myForm" onsubmit="validate()" method="post">
+		<table>
+			<tr>
+				<td id="gris">Nick</td>
+				<td><input type="text" name="ID"/></td>
+			</tr>
+			<tr>
+				<td>Password</td>
+			<td><input type="password" name="Contrasenya"/></td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td><input type="text" name="Email" /></td>
+			</tr>
+			<tr>
+				<td>Codi Postal</td>
+				<td><input type="text" name="Codi Postal"
+				placeholder="El teu codi postal"/></td>
+			</tr>
+			<tr>
+				<td>Pais</td>
+				<td>
+					<select name="Pais">
+						<option value="-1" selected>[Escull el teu]
+						</option>
+						<option value="1">Espanya</option>
+						<option value="2">Argentina</option>
+						<option value="3">Colombia</option>
+						<option value="4">Catalunya</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td align="left"></td>
+				<td><input id="submit" type="submit" value="Submit"</td>
+			</tr>
+		</table>
+		</form>
+	</body>
+</html>

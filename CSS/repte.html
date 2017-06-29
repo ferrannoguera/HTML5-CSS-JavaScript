@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Repte</title>
+  <meta charset="utf-8">
+  <style type="text/css">
+		.caixa{
+			width: 150px;
+			height: 50px;
+			position:relative;
+		}
+		#gris1 {
+			background-color: #666;
+		}
+		#gris2 {
+			background-color: #888;
+		}
+		#gris3 {
+			background-color: #AAA;
+		}
+		#gris4{
+			background-color: #CCC;
+		}
+		#vermell{
+			background-color: red;
+		}
+		#negre{
+			background-color: black;
+		}	
+		#gris1:hover+#gris2+#gris3{
+			background-color:red;
+		}
+		#gris1:hover+#gris2+#gris3+#gris4{
+			display:none;
+		}
+	</style>
+  </head>
+  <body>
+	<div class="caixa" id="gris1">1</div>
+	<div class="caixa" id="gris2">2</div>
+	<div class="caixa" id="gris3">3</div>
+	<div class="caixa" id="gris4">4</div>
+	<div class="caixa" id="negre">5</div>
+  </body>
+</html>
